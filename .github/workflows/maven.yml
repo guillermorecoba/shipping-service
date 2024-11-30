@@ -25,5 +25,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and Push Docker Image 
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/shipping-service:latest .
-        docker push ${{ secrets.DOCKER_USERNAME }}/shipping-service:latest
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/shipping-service{{ github.ref }}:latest .
+        docker push ${{ secrets.DOCKER_USERNAME }}/shipping-service{{ github.ref }}:latest
